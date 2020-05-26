@@ -1,0 +1,15 @@
+# dependencies
+/node_modules
+.env
+
+# project
+dist
+.cache
+
+# misc
+.DS_Store
+.env.**
+npm-debug.log*
+
+# IDEs
+.idea
