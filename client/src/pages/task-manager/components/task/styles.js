@@ -39,8 +39,10 @@ export const Button = styled.div`
   background-color: ${props => props.loading ? 'rgba(0, 0, 0, .5)' : '#000'};
   border-radius: .5rem;
   cursor: pointer;
+  width: 15rem;
+  text-align: center;
   text-decoration: unset;
-  margin-left: 3rem;
+  margin-left: auto;
   &:hover {
     background-color: rgba(0, 0, 0, .5);
   }

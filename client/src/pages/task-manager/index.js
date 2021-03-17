@@ -19,9 +19,9 @@ export const TaskManager = () => {
       .catch(console.error)
   }, [])
 
-  return <div>
+  return <Container>
     <Title>Task Manager</Title>
     <Form />
     {tasks.length ? tasks.map(task => <Task key={task.id} {...task} statuses={statuses} />) : <Text>No Tasks</Text>}
-  </div>
+  </Container>
 }

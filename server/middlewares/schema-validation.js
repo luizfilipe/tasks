@@ -1,4 +1,3 @@
-import Joi from '@hapi/joi'
 export const schemaValidation = (schema, property) => {
   return (req, res, next) => {
     const { error } = schema.validate(req[property] || {})

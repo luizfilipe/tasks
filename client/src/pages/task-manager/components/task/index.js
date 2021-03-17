@@ -13,15 +13,16 @@ export const Task = ({ title, description, id, status, statuses }) => {
   const getStatusDecorator = () => statuses[camelCase(status)]
 
   const updateStatus = debounce(() => {
-    if (!loading) {
-      setLoading(true)
-      changeStatus(dispatch, {
-        id,
-        description,
-        title,
-        status: getStatusDecorator().next
-      }).then(() => setLoading(false))
+    if (loading) {
+      return
     }
+    setLoading(true)
+    changeStatus(dispatch, {
+      id,
+      description,
+      title,
+      status: getStatusDecorator().next
+    }).then(() => setLoading(false))
   }, 300)
 
   return <>

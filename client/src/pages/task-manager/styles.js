@@ -11,3 +11,8 @@ export const Text = styled.div`
   flex: 1;  
   margin: 5rem;
 `
+
+export const Container = styled.div`
+  width: 50rem;
+`
+
