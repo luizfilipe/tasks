@@ -3,7 +3,7 @@ import { Tasks } from '../models/tasks'
 export const getTasks = async (req, res) => {
   res
     .status(200)
-    .json(await Tasks.findAll())
+    .json(await Tasks.findAll({ order: [['id', 'DESC']] }))
     .end()
 }
 export const createTasks = async (req, res) => {
@@ -18,5 +18,8 @@ export const createTasks = async (req, res) => {
 export const changeStatus = async (req, res) => {
   res
     .status(200)
-    .json(await Tasks.update(req.body, { where: req.params, returning: true }))
+    .json(await Tasks.update(req.body, {
+      where: req.params,
+      returning: true
+    }))
 }
