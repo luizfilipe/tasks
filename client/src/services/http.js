@@ -1,6 +1,8 @@
 import axios from 'axios'
+import { identity } from 'lodash'
+
 export default () => {
-  axios.interceptors.request.use(config => config, error => {
+  axios.interceptors.request.use(identity, error => {
     console.error(error)
     Promise.reject(error)
   })
