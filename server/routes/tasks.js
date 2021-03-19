@@ -3,7 +3,7 @@ import { Tasks } from '../models/tasks'
 export const getTasks = async (req, res) => {
   res
     .status(200)
-    .json(await Tasks.findAll({ order: [['id', 'DESC']] }))
+    .json(await Tasks.findAll({ order: [['status', 'ASC'], ['id', 'DESC']] }))
     .end()
 }
 export const createTasks = async (req, res) => {
